@@ -179,18 +179,14 @@ The Knowledge Graph enhances relational learning between subjects and brain regi
 
 # 9️⃣ RESULTS AND DISCUSSION
 
-### 📊 Performance Comparison
+### 📊 Performance Compariso
 
-| Model | Accuracy | Observations |
-|--------|----------|--------------|
-| Subject Graph GCN | ~78% | Limited relational modeling |
-| Knowledge Graph GCN | **84%** | Improved accuracy & interpretability |
-
-Additional Evaluation Metrics:
-- F1 Score  
-- ROC-AUC  
-- Precision & Recall  
-- Confusion Matrix  
+| Evaluation Metrics      | Subject Graph GCN (Model 1) | Knowledge Graph GCN (Model 2) |
+|--------------------------|-----------------------------|-------------------------------|
+| Accuracy                 | 0.5665                      | 0.8400                        |
+| F1-score (Macro)         | 0.5624                      | 0.8450                        |
+| Recall (Macro)           | 0.5670                      | 0.8401                        |
+| Precision (Macro)        | 0.5697                      | 0.8400                        |
 
 ---
 
