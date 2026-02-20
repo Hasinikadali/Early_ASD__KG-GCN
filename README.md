@@ -190,8 +190,117 @@ The Knowledge Graph enhances relational learning between subjects and brain regi
 
 ---
 
+---
+
 ## 📉 Training Loss Curves
 
-(Insert Training Loss images here)
+### Subject Graph GCN (Model 1)
 
-Example:
+![Subject Training Loss](images/sloss.jpg)
+
+### Knowledge Graph GCN (Model 2)
+
+![KG Training Loss](images/kloss.jpg)
+
+The training loss curves demonstrate that the Knowledge Graph GCN converges faster and more stably compared to the baseline Subject Graph GCN.  
+Model 2 shows smoother optimization and reduced oscillations, indicating better learning of graph representations.
+
+---
+
+## 📊 Confusion Matrix
+
+### Subject Graph GCN (Model 1)
+
+![Subject Confusion Matrix](images/smatrix.jpg)
+
+### Knowledge Graph GCN (Model 2)
+
+![Knowledge Graph Confusion Matrix](images/kmatrix.jpg)
+
+The confusion matrices clearly highlight the difference in classification performance.
+
+- Model 1 shows higher misclassification between ASD and Control subjects.
+- Model 2 significantly reduces false positives and false negatives.
+- The Knowledge Graph improves class separation capability.
+
+---
+
+## 🧠 Explainability Results
+
+### Knowledge Graph GCN Explainability
+
+![KG Explainability](images/ex.jpg)
+
+---
+
+## 🧠 Feature Importance Analysis
+
+The feature importance visualization represents the average normalized contribution of each phenotypic attribute across all test subjects.
+
+Key Observations:
+
+- The importance scores of features such as **Age**, **Score**, **IQ**, **Memory**, and **Attention** are relatively close to each other.
+- No single feature dominates the model’s decision-making process.
+- This indicates that the model learns **multi-factor relational patterns** rather than relying on a single strong predictor.
+- The noticeable standard deviation across subjects suggests variability in feature influence, meaning that different subjects are classified based on different combinations of attributes.
+
+This behavior demonstrates that the Knowledge Graph GNN captures distributed relational dependencies rather than overfitting to one attribute.
+
+---
+
+## 🧩 Interpretation in ASD Context
+
+In the context of ASD prediction:
+
+- Age-related and cognitive-score features contribute slightly more on average.
+- However, the model combines multiple attributes and connectivity patterns for final classification.
+- This supports the idea that ASD is a multi-dimensional neurological condition rather than being determined by a single phenotypic marker.
+
+The explainability results enhance clinical interpretability by identifying which attributes and brain connectivity patterns influence the decision process.
+
+---
+
+## 📌 Overall Explainability Insight
+
+The integration of Knowledge Graphs enables:
+
+✔ Transparent feature contribution analysis  
+✔ Identification of influential brain regions  
+✔ Understanding subject-specific decision patterns  
+✔ Improved trust in AI-based medical diagnosis  
+
+This strengthens the practical applicability of the proposed framework in real-world clinical settings.
+
+---
+
+## 📈 Results Analysis
+
+The experimental comparison between Subject Graph GCN (Model 1) and Knowledge Graph GCN (Model 2) demonstrates substantial performance improvement when relational knowledge is incorporated.
+
+Key Observations:
+
+- Accuracy improved from **56.65% → 84.00%**
+- F1-score improved from **0.5624 → 0.8450**
+- Significant reduction in classification errors
+- Improved stability in training convergence
+- Enhanced interpretability through explainable AI
+
+The baseline model struggles to capture higher-order relational dependencies between subjects and brain regions.  
+In contrast, the Knowledge Graph model leverages structured relational information, enabling better embedding learning and class discrimination.
+
+---
+
+# 🎯 Conclusion
+
+This project successfully demonstrates that integrating Knowledge Graphs with Graph Convolutional Networks significantly enhances early ASD prediction performance.
+
+The Knowledge Graph model:
+
+✔ Improves classification accuracy  
+✔ Captures relational and phenotypic information  
+✔ Provides explainable predictions  
+✔ Reduces misclassification rates  
+
+The final system achieves **84% accuracy**, validating the effectiveness of graph-based relational learning for neurodevelopmental disorder detection.
+
+This framework bridges the gap between predictive performance and clinical interpretability, making it a promising approach for AI-assisted ASD diagnosis.
