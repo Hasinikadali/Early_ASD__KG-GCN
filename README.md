@@ -116,7 +116,7 @@ The system consists of six major modules:
 
 # 6️⃣ SYSTEM ARCHITECTURE
 
-![Architecture Diagram](images/arch.jpg) 
+![Architecture Diagram](images/Picture3.jpg) 
 
 The architecture consists of:
 
