@@ -1,5 +1,4 @@
-# Early Autism Spectrum Disorder Prediction  
-## via Knowledge Graphs and Graph Convolution Networks  
+# Early Autism Spectrum Disorder Prediction via Knowledge Graphs and Graph Convolution Networks  
 
 # 📌 ABSTRACT
 
@@ -117,4 +116,86 @@ The system consists of six major modules:
 
 # 6️⃣ SYSTEM ARCHITECTURE
 
-![Architecture Diagram](images/arch.jpg)
+![Architecture Diagram](images/arch.jpg) 
+
+The architecture consists of:
+
+- Subject-Level Graph (ROI-based connectivity)  
+- Knowledge Graph (Subject + ROI + Phenotypic relations)  
+- GCN Models for classification  
+
+---
+
+# 7️⃣ GRAPH CONSTRUCTION
+
+## Subject Graph (Baseline Model)
+
+Nodes:
+- Brain ROIs  
+
+Edges:
+- Functional connectivity (Pearson correlation)  
+
+Node Features:
+- Connectivity statistics  
+- Age  
+- Sex  
+
+---
+
+## Knowledge Graph (Relational Model)
+
+Node Types:
+- Subject  
+- ROI  
+
+Relations:
+- subject → connectedToROI → roi  
+- roi → connectedToROI → roi  
+- subject → similarTo → subject  
+
+The Knowledge Graph enhances relational learning between subjects and brain regions.
+
+---
+
+# 8️⃣ MODELS
+
+## Model A — Subject Graph GCN (Without KG)
+
+- Uses only ROI connectivity  
+- Learns neural patterns  
+- Baseline comparison model  
+
+---
+
+## Model B — Knowledge Graph GCN (With KG)
+
+- Uses heterogeneous graph  
+- Integrates phenotypic attributes  
+- Uses HeteroConv (GraphSAGE)  
+- Learns relational embeddings  
+
+---
+
+# 9️⃣ RESULTS AND DISCUSSION
+
+### 📊 Performance Comparison
+
+| Model | Accuracy | Observations |
+|--------|----------|--------------|
+| Subject Graph GCN | ~78% | Limited relational modeling |
+| Knowledge Graph GCN | **84%** | Improved accuracy & interpretability |
+
+Additional Evaluation Metrics:
+- F1 Score  
+- ROC-AUC  
+- Precision & Recall  
+- Confusion Matrix  
+
+---
+
+## 📉 Training Loss Curves
+
+(Insert Training Loss images here)
+
+Example:
